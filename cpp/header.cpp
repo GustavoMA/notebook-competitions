@@ -13,3 +13,7 @@ typedef vector<ii>    vii;
 #define sc second
 #define INF 2000000000
 #define MAX_N 100100
+
+//read files 
+//freopen ("in.txt", "r", stdin);
+//freopen ("out.txt","w", stdout);
