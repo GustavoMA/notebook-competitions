@@ -73,12 +73,7 @@ public:
 int p[MAX_N], rank[MAX_N], size[MAX_N];
 
 // O(n)
-void build_union_find() {
-	for (int i = 0; i < n; i++) {
-		p[i] = i;
-		rank[i] = 0;
-		size[i] = 1;
-	}
+inline void build_union_find() {
 	for (int i = 0; i < n; i++) {
 		p[i] = i;
 		rank[i] = 0;
