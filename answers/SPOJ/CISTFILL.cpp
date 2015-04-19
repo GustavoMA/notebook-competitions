@@ -43,13 +43,13 @@ bool check(double m) {
 double binary_search() {
     double left = 0.0;
     double right = 1040000.0;
-    while (left < right) {
+    for (int i = 0; i < 40; i++) {
         double mid = (left + right)/2.0;
         //printf("DEBUG  mid = %lf\n", mid);
         if (check(mid)) {
-            left = mid + EPS;
+            left = mid;
         } else {
-            right = mid - EPS;
+            right = mid;
         }
     }
     return left;
