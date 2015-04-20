@@ -12,7 +12,13 @@ typedef vector<ii>    vii;
 #define fi first
 #define sc second
 #define INF 2000000000
-#define MAX_N 100010
+#define MAX_N 200100
+#define MOD7 1000000007
+#define MOD9 1000000009
+#define EPS 1e-4
+//read files 
+//freopen ("in.txt", "r", stdin);
+//freopen ("out.txt","w", stdout);
 
 #define left(x) x*2
 #define right(x) x*2 + 1
@@ -20,10 +26,12 @@ typedef vector<ii>    vii;
 #define mid(a, b) (a + b)/2
 
 /**
-*** Segment Tree of sum without classes
+*** UVA - 12086 - Potentiometers
+*** http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=3238
+*** Tag: Segment Tree
 *** Author: Gustavo Monteiro Alves - GustavoMA
-*** Segtree starting from 1 to n
 **/
+
 int tree[4*MAX_N];
 int arr[MAX_N];
 int n;
@@ -60,4 +68,34 @@ int query_segtree(int i, int j, int node=1, int l=1, int r=n) {
     int r_query = query_segtree(i, j, right(node), mid(l,r)+1,    r     );
 
     return l_query + r_query;        
+ }
+
+ int main() {
+    int caso = 0;
+    while(true){
+        scanf(" %d", &n);
+        //printf("DEBUG n = %d\n", n);
+        
+        if (n == 0) break;
+        if (caso != 0) printf("\n");
+        printf("Case %d:\n", ++caso);
+        for (int i = 1; i<= n; i++) scanf(" %d", &arr[i]);
+        build_segtree();
+        while(true){
+            char a;
+            scanf(" %c", &a);
+            if (a == 'E') {
+                char b, c;
+                scanf(" %c %c", &b, &c);
+                break;
+            }
+            int b, c;
+            scanf(" %d %d", &b, &c);
+            if (a == 'M') printf("%d\n", query_segtree(b,c) );
+            if (a == 'S') {
+                arr[b] = c;
+                update_segtree(b);
+            }
+        }
+    }
  }
