@@ -43,11 +43,11 @@ void update_segtree(int i, int node=1, int l=1, int r=n) {
     //In range
     if (i == r && i == l) {
         tree[node] = arr[l];
-        return;   
+        return;
     }
     update_segtree(i, left(node),  l, mid(l, r) );
     update_segtree(i, right(node), mid(l,r)+1, r);
-    tree[node] = tree[left(node)] + tree[right(node)];   
+    tree[node] = tree[left(node)] + tree[right(node)];
 }
 
 int query_segtree(int i, int j, int node=1, int l=1, int r=n) {
@@ -59,5 +59,5 @@ int query_segtree(int i, int j, int node=1, int l=1, int r=n) {
     int l_query = query_segtree(i, j, left(node) ,     l     , mid(l, r));
     int r_query = query_segtree(i, j, right(node), mid(l,r)+1,    r     );
 
-    return l_query + r_query;        
+    return l_query + r_query;
  }

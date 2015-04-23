@@ -17,14 +17,3 @@ typedef vector<ii>    vii;
 #define MOD7 1000000007
 #define MOD9 1000000009
 #define EPS 1e-4
-
-/**
-*** Judge - Question name
-*** Link
-*** Tag: 
-*** Author: Gustavo Monteiro Alves - GustavoMA
-**/
-
-//read files 
-//freopen ("in.txt", "r", stdin);
-//freopen ("out.txt","w", stdout);
