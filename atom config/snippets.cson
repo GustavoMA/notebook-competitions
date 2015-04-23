@@ -1,0 +1,303 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it here:
+# https://github.com/bevry/cson#what-is-cson
+
+#Competition cpp sniplets
+'.source.cpp':
+    'Scanf 1 input':
+        'prefix': 'scan'
+        'body': 'scanf(" %${1:d}", &${2:n});'
+
+    'Scanf 2 inputs':
+        'prefix': 'scan2'
+        'body': 'scanf(" %${1:d} %${2:d}", &${3:n}, &${4:m});'
+
+    'Scanf 3 inputs':
+        'prefix': 'scan3'
+        'body': 'scanf(" %${1:d} %${2:d} %${3:d}", &${4:a}, &${5:b}, &${6:c});'
+
+    'Printf':
+        'prefix': 'print'
+        'body': 'printf("%${1:d}n", ${2:n});'
+
+    'Memset':
+        'prefix': 'memset'
+        'body': 'memset(${1:memo}, ${2:-1}, sizeof ${1:memo});'
+
+    'About':
+        'prefix': 'about'
+        'body' : """
+        /**
+        *** ${1:Judge - Question name}
+        *** ${2:Link}
+        *** Tag: $3
+        *** Author: Gustavo Monteiro Alves - GustavoMA
+        **/
+        """
+
+    'Heading':
+        'prefix' : 'heading'
+        'body' : """
+        #include <bits/stdc++.h>
+
+        using namespace std;
+
+        typedef long long      ll;
+        typedef pair<int, int> ii;
+        typedef vector<int>    vi;
+        typedef vector<ll>    vll;
+        typedef vector<ii>    vii;
+        #define pb push_back
+        #define mp make_pair
+        #define fi first
+        #define sc second
+        #define INF 1000000010
+        #define LINF 1000000000000000010
+        #define MAX_N 100100
+        #define MOD7 1000000007
+        #define MOD9 1000000009
+        #define EPS 1e-4
+        """
+
+    'UnionFindClass':
+        'prefix' : 'UnionFindClass'
+        'body' : """
+        class Union_Find {
+
+        private:
+            int p[MAX_N], rank[MAX_N], size[MAX_N];
+
+        public:
+        	// Constructor
+        	// O(n)
+        	Union_Find(int n) {
+        		for (int i = 0; i < n; i++) {
+        			p[i] = i;
+        			rank[i] = 0;
+        			size[i] = 1;
+        		}
+        	}
+
+        	// ~O(log n)
+        	int find(int n) {
+        		return (p[n] == n) ? n : (p[n] = find(p[n]));
+        	}
+
+        	// O(1)
+        	bool is_same_set(int i, int j) {
+        		return find(i) == find(j);
+        	}
+
+        	// ~O(log n)
+        	void union_set(int i, int j) {
+        		if (!is_same_set(i, j)) {
+        			int x = find(i), y = find(j);
+        			if (rank[x] > rank[y]) {
+        				p[y] = x;
+        				size[x] += size[y];
+        			} else {
+        				p[x] = y;
+        				size[y] += size[x];
+        				if(rank[x] == rank[y]) rank[y]++;
+        			}
+        		}
+        	}
+
+        	// ~O(log n)
+        	int size(int n) {
+        		return size[find(n)];
+        	}
+        };
+        """
+
+    'UnionFind':
+        'prefix': 'UnionFind'
+        'body' : """
+        //Union Find
+        int p[MAX_N], rank[MAX_N], size[MAX_N];
+
+        // O(n)
+        inline void build_union_find() {
+        	for (int i = 0; i < n; i++) {
+        		p[i] = i;
+        		rank[i] = 0;
+        		size[i] = 1;
+        	}
+        }
+        // ~O(log n)
+        int find(int n) {
+        	return (p[n] == n) ? n : (p[n] = find(p[n]));
+        }
+        // O(1)
+        bool is_same_set(int i, int j) {
+        	return find(i) == find(j);
+        }
+        // ~O(log n)
+        void union_set(int i, int j) {
+        	if (!is_same_set(i, j)) {
+        		int x = find(i), y = find(j);
+        		if (rank[x] > rank[y]) {
+        			p[y] = x;
+        			size[x] += size[y];
+        		} else {
+        			p[x] = y;
+        			size[y] += size[x];
+        			if(rank[x] == rank[y]) rank[y]++;
+        		}
+        	}
+        }
+        // ~O(log n)
+        int size(int n) {
+        	return size[find(n)];
+        }
+        """
+
+    'ComplexSegmentTree':
+        'prefix': 'ComplexSegmentTree'
+        'body': """
+        /**
+        *** Complex Segment Tree of sum without classes
+        *** Author: Gustavo Monteiro Alves - GustavoMA
+        *** Segtree starting from 1 to n
+        **/
+        #define left(x) x*2
+        #define right(x) x*2 + 1
+        #define pai(x) x/2
+        #define mid(a, b) (a + b)/2
+
+        struct Node {
+            int value;
+            bool flag;
+
+            void leaf(int val) {
+                value = val;
+                flag = false;
+            }
+
+            void flag_leaf() {
+                flag = true;
+            }
+
+            void merge(Node& left, Node& right) {
+                value = left.value + right.value;
+                flag = false;
+            }
+
+            int get_value() {
+                return value;
+            }
+        };
+
+        Node tree[4*MAX_N];
+        int arr[MAX_N];
+        int n;
+        void build_segtree(int node=1, int l=1, int r=n) {
+            if (l == r) {
+                tree[node].leaf(arr[l]);
+                return;
+            }
+            build_segtree(left(node),  l, mid(l, r));
+            build_segtree(right(node), mid(l,r)+1, r);
+            tree[node].merge(tree[left(node)], tree[right(node)]);
+        }
+
+        void update_segtree(int i, int node=1, int l=1, int r=n) {
+            //Out of range
+            if (i > r || i < l) return;
+            //In range
+            if (i == r && i == l) {
+                tree[node].leaf(arr[l]);
+                return;
+            }
+            update_segtree(i, left(node),  l, mid(l, r) );
+            update_segtree(i, right(node), mid(l,r)+1, r);
+            tree[node].merge(tree[left(node)], tree[right(node)]);
+        }
+
+        Node query_segtree(int i, int j, int node=1, int l=1, int r=n) {
+            if (i > r || j < l) {
+                Node no;
+                no.flag_leaf();
+                return no;
+            }
+            if (l >= i && r <= j) return tree[node];
+
+            Node l_query = query_segtree(i, j, left(node) ,     l     , mid(l, r));
+            Node r_query = query_segtree(i, j, right(node), mid(l,r)+1,    r     );
+
+            if (l_query.flag && r_query.flag) return l_query;
+            if (l_query.flag) return r_query;
+            if (r_query.flag) return l_query;
+
+            Node no;
+            no.merge(l_query, r_query);
+            return no;
+        }
+        """
+
+    'SegmentTree':
+        'prefix': 'SegmentTree'
+        'body': """
+        /**
+        *** Segment Tree of sum without classes
+        *** Author: Gustavo Monteiro Alves - GustavoMA
+        *** Segtree starting from 1 to n
+        **/
+        #define left(x) x*2
+        #define right(x) x*2 + 1
+        #define pai(x) x/2
+        #define mid(a, b) (a + b)/2
+
+        int tree[4*MAX_N];
+        int arr[MAX_N];
+        int n;
+        void build_segtree(int node=1, int l=1, int r=n) {
+            if (l == r) {
+                tree[node] = arr[l];
+                return;
+            }
+            build_segtree(left(node),  l, mid(l, r));
+            build_segtree(right(node), mid(l,r)+1, r);
+            tree[node] = tree[left(node)] + tree[right(node)];
+        }
+
+        void update_segtree(int i, int node=1, int l=1, int r=n) {
+            //Out of range
+            if (i > r || i < l) return;
+            //In range
+            if (i == r && i == l) {
+                tree[node] = arr[l];
+                return;
+            }
+            update_segtree(i, left(node),  l, mid(l, r) );
+            update_segtree(i, right(node), mid(l,r)+1, r);
+            tree[node] = tree[left(node)] + tree[right(node)];
+        }
+
+        int query_segtree(int i, int j, int node=1, int l=1, int r=n) {
+            //Out of range, use neutral element or a flag
+            if (i > r || j < l) return 0;
+            //Totally in range
+            if (l >= i && r <= j) return tree[node];
+
+            int l_query = query_segtree(i, j, left(node) ,     l     , mid(l, r));
+            int r_query = query_segtree(i, j, right(node), mid(l,r)+1,    r     );
+
+            return l_query + r_query;
+         }
+        """

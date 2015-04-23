@@ -1,29 +1,13 @@
-#include <bits/stdc++.h>
-
-using namespace std;
-
-typedef long long      ll;
-typedef pair<int, int> ii;
-typedef vector<int>    vi;
-typedef vector<ll>    vll;
-typedef vector<ii>    vii;
-#define pb push_back
-#define mp make_pair
-#define fi first
-#define sc second
-#define INF 2000000000
-#define MAX_N 100010
-
-#define left(x) x*2
-#define right(x) x*2 + 1
-#define pai(x) x/2
-#define mid(a, b) (a + b)/2
-
 /**
 *** Complex Segment Tree of sum without classes
 *** Author: Gustavo Monteiro Alves - GustavoMA
 *** Segtree starting from 1 to n
 **/
+#define left(x) x*2
+#define right(x) x*2 + 1
+#define pai(x) x/2
+#define mid(a, b) (a + b)/2
+
 struct Node {
     int value;
     bool flag;
