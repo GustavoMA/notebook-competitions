@@ -17,3 +17,8 @@ typedef vector<ii>    vii;
 #define MOD7 1000000007
 #define MOD9 1000000009
 #define EPS 1e-4
+
+int main(int argc, char const *argv[]) {
+
+    return 0;
+}
