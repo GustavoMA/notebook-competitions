@@ -16,7 +16,7 @@ typedef vector<ii>    vii;
 #define MOD 1000000007
 
 /**
-*** UVA 10491 - Cows and Cars
+*** UVa 10491 - Cows and Cars
 *** http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1432
 *** Tip: http://www.questtosolve.com/browse.php?pid=10491
 *** Author: Gustavo Monteiro Alves - GustavoMA

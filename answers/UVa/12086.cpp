@@ -26,7 +26,7 @@ typedef vector<ii>    vii;
 #define mid(a, b) (a + b)/2
 
 /**
-*** UVA - 12086 - Potentiometers
+*** UVa - 12086 - Potentiometers
 *** http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=3238
 *** Tag: Segment Tree
 *** Author: Gustavo Monteiro Alves - GustavoMA

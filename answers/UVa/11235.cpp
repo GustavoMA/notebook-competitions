@@ -19,7 +19,7 @@ typedef vector<ii>    vii;
 #define EPS 1e-4
 
 /**
-*** UVA - 11235 - Frequent values
+*** UVa - 11235 - Frequent values
 *** http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2176
 *** Tip: http://www.algorithmist.com/index.php/UVa_11235
 *** Tip2: http://niceproblems.blogspot.com.br/2012/05/uva-11235-frequent-values.html

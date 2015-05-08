@@ -16,7 +16,7 @@ typedef vector<ii>    vii;
 #define MAX_N 100100
 
 /**
-*** UVA 10110 - Light, more light
+*** UVa 10110 - Light, more light
 *** http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1051
 *** Tip: http://www.algorithmist.com/index.php/UVa_10110
 *** Author: Gustavo Monteiro Alves - GustavoMA

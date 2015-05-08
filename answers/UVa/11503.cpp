@@ -15,7 +15,7 @@ typedef vector<ii>    vii;
 #define MAX_N 100100
 
 /**
-*** UVA 11503 - Virtual Friends
+*** UVa 11503 - Virtual Friends
 *** http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2498
 *** Author: Gustavo Monteiro Alves - GustavoMA
 **/

@@ -16,7 +16,7 @@ typedef vector<ii>    vii;
 #define MOD 1000000007
 
 /**
-*** UVA 10784 - Diagonal
+*** UVa 10784 - Diagonal
 *** http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1725
 *** Author: Gustavo Monteiro Alves - GustavoMA
 **/
