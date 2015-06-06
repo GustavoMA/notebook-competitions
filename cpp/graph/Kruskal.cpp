@@ -1,10 +1,5 @@
-/**
-*** Union Find without classes
-*** Author: Gustavo Monteiro Alves - GustavoMA
-**/
 int p[MAX_N], rank[MAX_N], size[MAX_N];
 
-// O(n)
 inline void build_union_find(int n) {
 	for (int i = 0; i < n; i++) {
 		p[i] = i;
@@ -12,15 +7,12 @@ inline void build_union_find(int n) {
 		size[i] = 1;
 	}
 }
-// ~O(log n)
 int find(int n) {
 	return (p[n] == n) ? n : (p[n] = find(p[n]));
 }
-// O(1)
 bool is_same_set(int i, int j) {
 	return find(i) == find(j);
 }
-// ~O(log n)
 void union_set(int i, int j) {
 	if (!is_same_set(i, j)) {
 		int x = find(i), y = find(j);
@@ -34,7 +26,24 @@ void union_set(int i, int j) {
 		}
 	}
 }
-// ~O(log n)
 int union_size(int n) {
 	return size[find(n)];
+}
+
+vector<pair<int, ii> > edges;
+int Kruskal(int n) {
+    build_union_find(n);
+    sort(edges.begin(), edges.end());
+	//reverse(edges.begin(), edges.end());
+    int tot = 0;
+    for (int i = 0; i < (int) edges.size(); i++) {
+        int v = edges[i].sc.fi;
+        int u = edges[i].sc.sc;
+        int w = edges[i].fi;
+        if (!is_same_set(v, u)) {
+            tot += w;
+            union_set(v, u);
+        }
+    }
+    return tot;
 }

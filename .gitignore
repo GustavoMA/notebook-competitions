@@ -1,5 +1,5 @@
 a.out
 *.class
-answers/new
-answers/new/*
+#answers/new
+#answers/new/*
 
