@@ -1,4 +1,3 @@
-//TODO test
 /**
 *** Dijkstra algorithm
 *** Author: Gustavo Monteiro Alves - GustavoMA
