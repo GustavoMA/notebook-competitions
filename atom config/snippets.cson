@@ -33,7 +33,7 @@
 
     'Printf':
         'prefix': 'print'
-        'body': 'printf("%${1:d}\n", ${2:n});'
+        'body': 'printf("%${1:d}\\\\n", ${2:n});'
 
     'Memset':
         'prefix': 'memset'
