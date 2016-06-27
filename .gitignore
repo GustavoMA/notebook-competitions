@@ -2,3 +2,4 @@ a.out
 *.class
 answers/new
 answers/new/*
+.DS_Store
